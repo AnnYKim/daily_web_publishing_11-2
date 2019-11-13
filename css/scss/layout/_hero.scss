@@ -1,0 +1,40 @@
+.hero {
+  font-size: 14px;
+  &-body {
+    @include flexbox();
+    @include align-items(center);
+    width: 100%;
+    height: 100vh;
+  }
+  &-title {
+    position: relative;
+
+    &-shape {
+      position: absolute;
+      top: -10px;
+      left: -5px;
+      right: -5px;
+      bottom: -20px;
+      overflow: hidden;
+      background: #2128bd;
+    }
+
+    &-blend {
+      z-index: 1;
+      position: relative;
+      color: #000;
+      background-color: #fff;
+      transform: translateZ(0);
+      mix-blend-mode: screen;
+    }
+
+    &-text {
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: -0.075em;
+      line-height: 93%;
+      text-rendering: optimizeSpeed;
+      font-size: 8vw;
+    }
+  }
+}
