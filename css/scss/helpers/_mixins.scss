@@ -5,7 +5,7 @@
 
 // 폰트
 @mixin font-main {
-  font-family: "Proxima", "NotoSans", AppleGothic, sans-serif, Helvetica;
+  font-family: "Montserrat", AppleGothic, sans-serif, Helvetica;
 }
 
 // 글자 줄임 표시
@@ -14,9 +14,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  @else {
+  } @else {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -49,11 +47,7 @@
   // Firefox 3.6+
   background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
   // Safari 4+, Chrome 1+
-  background-image: -webkit-gradient(linear,
-      left top,
-      right top,
-      color-stop(0%, $from),
-      color-stop($stop, $to));
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
   // Safari 5.1+, Chrome 10+
   background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
   // Opera 11.10+
@@ -332,10 +326,9 @@
   transform-origin: $origin;
 }
 
-
 // float 해제
 @mixin floatClear {
   display: block;
-  content: '';
+  content: "";
   clear: both;
 }

@@ -21,7 +21,9 @@
       <div class="hero-content">
         <div class="hero-body">
           <div class="hero-title">
-            <div class="hero-title-shape"></div>
+            <div class="hero-title-shape">
+              <div class="hero-title-cursor"></div>
+            </div>
             <div class="hero-title-blend">
               <h1 class="hero-title-text">
                 <div>
@@ -33,12 +35,29 @@
                 </div>
               </h1>
             </div>
+
           </div>
         </div>
         <div class="hero-footer"></div>
         <p>Lorem Ipsum</p>
       </div>
     </header>
+
+    <script>
+
+      var svgElem = document.querySelector(".hero-title-cursor");
+
+      window.addEventListener('mousemove', function (e) {
+
+        let x = e.clientX;
+        let y = e.clientY;
+        var h = window.innerHeight;
+        y = y - (h / 2);
+        svgElem.style.top = y + 'px';
+        svgElem.style.left = x + "px";
+      }, false);
+
+    </script>
 
   </div>
 </body>
