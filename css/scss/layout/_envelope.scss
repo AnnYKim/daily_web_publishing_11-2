@@ -1,10 +1,44 @@
-.envelope-content {
-  z-index: 1;
+.envelope {
   position: relative;
-  @include flexbox();
-  @include align-items(center);
-  @include justify-content(center);
-  height: 105vh;
-  min-height: 850px;
-  transform-style: preserve-3d;
+  &-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: mistyrose;
+  }
+  &-content {
+    z-index: 1;
+    position: relative;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    height: 105vh;
+    min-height: 850px;
+    transform-style: preserve-3d;
+  }
+
+  &-body {
+    width: 100%;
+    text-align: center;
+  }
+
+  &-container {
+    max-width: 1600px;
+    padding: 0 270px 0 270px;
+  }
+
+  &-title {
+    font-size: 80px;
+    letter-spacing: -5.97px;
+    line-height: 86px;
+  }
+
+  &-text {
+    margin: 35px 0 0 0;
+    font-size: 24px;
+    letter-spacing: -0.4px;
+    line-height: 26px;
+  }
 }

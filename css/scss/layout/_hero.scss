@@ -1,4 +1,9 @@
 .hero {
+  position: relative;
+
+  &-content {
+    outline: 4px dotted red;
+  }
   &-body {
     @include flexbox();
     @include align-items(center);
@@ -25,11 +30,15 @@
     }
 
     &-cursor {
+      z-index: 1;
       position: absolute;
       width: 400px;
       height: 400px;
       top: 50%;
+      // top: 0;
       left: 0;
+      // margin-top: -200px;
+      // margin-left: -200px;
       background: #ffcc57;
       border-radius: 100%;
     }
@@ -128,4 +137,18 @@
       background-size: cover;
     }
   }
+}
+
+.cursor {
+  // z-index: 1;
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  // top: 50%;
+  top: 0;
+  left: 0;
+  // margin-top: -200px;
+  // margin-left: -200px;
+  background: #57eeff;
+  border-radius: 100%;
 }

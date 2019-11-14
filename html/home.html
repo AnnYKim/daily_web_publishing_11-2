@@ -17,12 +17,14 @@
     </nav>
 
     <header class="hero">
+      <!-- <div class="cursor"></div> -->
       <div class="hero-particle"></div>
       <div class="hero-content">
         <div class="hero-body">
           <div class="hero-title">
             <div class="hero-title-shape">
               <div class="hero-title-cursor"></div>
+              <div class="cursor"></div>
             </div>
             <div class="hero-title-blend">
               <h1 class="hero-title-text">
@@ -52,16 +54,19 @@
     <!-- //end of header -->
 
     <div class="section section-envelope">
-      <div class="envelope-fill"></div>
+      <div class="envelope-fill fill--tertiary "></div>
+      <div class="envelope-particle"></div>
       <div class="envelope-content">
-        <div class="envelope-container">
-          <h2 class="envelope-title">
-            It's Your Money
-            <br />
-            Stop paying fees
-          </h2>
-          <div class="envelope-text">
-            Fee Freen Banking is possible
+        <div class="envelope-body">
+          <div class="envelope-container">
+            <h2 class="envelope-title">
+              It's Your Money
+              <br />
+              Stop paying fees
+            </h2>
+            <div class="envelope-text">
+              Fee Freen Banking is possible
+            </div>
           </div>
         </div>
       </div>
@@ -70,13 +75,17 @@
     <script>
 
 
+      var hero = document.querySelector(".hero");
+
       var title = document.querySelector(".hero-title");
       var cursor = document.querySelector(".hero-title-cursor");
+      var c = document.querySelector(".cursor");
 
-      window.addEventListener('mousemove', function (e) {
+      hero.addEventListener('mousemove', function (e) {
 
         let x = e.clientX;
-        let y = e.clientY
+        let y = e.clientY;
+        y = e.pageY;
         let windowH = window.innerHeight;
         var cursorSize = cursor.clientWidth;
         var titleH = title.clientHeight;
@@ -84,6 +93,8 @@
         x -= (cursorSize / 2);
         y = y - (cursorSize / 2) - (windowH / 2);
         cursor.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+
+        console.dir(e.pageY)
 
       }, false);
 
