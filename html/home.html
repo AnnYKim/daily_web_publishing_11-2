@@ -26,11 +26,11 @@
             </div>
             <div class="hero-title-blend">
               <h1 class="hero-title-text">
-                <div>
+                <div class="block">
                   <div>Banking</div>
                 </div>
                 <br />
-                <div>
+                <div class="block">
                   <div>Reimagined</div>
                 </div>
               </h1>
@@ -38,23 +38,53 @@
 
           </div>
         </div>
-        <div class="hero-footer"></div>
-        <p>Lorem Ipsum</p>
+        <div class="hero-footer">
+          <div class="hero-demo">
+            <div class="hero-demo-card"></div>
+            <div class="hero-demo-phone">
+              <div class="hero-demo-phone-shadow"></div>
+              <div class="hero-demo-phone-case"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
+    <!-- //end of header -->
+
+    <div class="section section-envelope">
+      <div class="envelope-fill"></div>
+      <div class="envelope-content">
+        <div class="envelope-container">
+          <h2 class="envelope-title">
+            It's Your Money
+            <br />
+            Stop paying fees
+          </h2>
+          <div class="envelope-text">
+            Fee Freen Banking is possible
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script>
 
-      var svgElem = document.querySelector(".hero-title-cursor");
+
+      var title = document.querySelector(".hero-title");
+      var cursor = document.querySelector(".hero-title-cursor");
 
       window.addEventListener('mousemove', function (e) {
 
         let x = e.clientX;
-        let y = e.clientY;
-        var h = window.innerHeight;
-        y = y - (h / 2);
-        svgElem.style.top = y + 'px';
-        svgElem.style.left = x + "px";
+        let y = e.clientY
+        let windowH = window.innerHeight;
+        var cursorSize = cursor.clientWidth;
+        var titleH = title.clientHeight;
+
+        x -= (cursorSize / 2);
+        y = y - (cursorSize / 2) - (windowH / 2);
+        cursor.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+
       }, false);
 
     </script>

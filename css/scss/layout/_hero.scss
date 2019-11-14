@@ -1,5 +1,4 @@
 .hero {
-  font-size: 14px;
   &-body {
     @include flexbox();
     @include align-items(center);
@@ -7,6 +6,7 @@
     width: 100%;
     height: 100vh;
   }
+
   &-title {
     position: relative;
     width: 100%;
@@ -15,35 +15,29 @@
     &-shape {
       contain: strict;
       position: absolute;
-      top: -10px;
-      left: -5px;
-      right: -5px;
-      bottom: -14px;
-      // overflow: hidden;
+      top: 0px;
+      left: 0;
+      right: 0;
+      bottom: -30px;
+      // padding: 8vw;
       background: #2128bd;
+      overflow: hidden;
     }
 
     &-cursor {
-      // display: none;
       position: absolute;
-      width: 650px;
-      height: 650px;
-      margin-top: -195px; //왜 30퍼지;;
-      margin-left: -325px;
-      top: 0;
+      width: 400px;
+      height: 400px;
+      top: 50%;
       left: 0;
       background: #ffcc57;
       border-radius: 100%;
-      outline: 4px solid red;
     }
 
     &-blend {
       z-index: 1;
       position: relative;
       width: 100%;
-      // color: #2128bd;
-      // width: 100vw;
-      // height: 100vh;
       color: #000;
       background-color: #fff;
       mix-blend-mode: screen;
@@ -52,13 +46,13 @@
       &:before {
         content: "";
         position: absolute;
-        top: -12px;
-        left: -6px;
-        right: -6px;
-        bottom: -22px;
         z-index: -1;
-        // background: #fff;
-        // background: rgb(232, 49, 49);
+        top: 0px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        // padding: 8vw;
+        background: #fff;
       }
     }
 
@@ -68,12 +62,70 @@
       letter-spacing: -0.075em;
       font-size: 120px;
       text-rendering: optimizeSpeed;
-      line-height: 93%;
-      // font-size: 8vw;
+      line-height: 85%;
+      font-size: 8vw;
     }
 
     br {
       display: none;
+    }
+
+    .block {
+      overflow: hidden;
+      // line-height: 1.15;
+      // padding: 0 0 1vw 0;
+      padding: 0.15em;
+      margin: -0.15em;
+      vertical-align: top;
+    }
+  }
+
+  &-footer {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    // background: gold;
+    margin-top: -100px;
+  }
+
+  &-demo {
+    position: relative;
+
+    &-card {
+      position: absolute;
+      display: block;
+      top: 80px;
+      left: 50%;
+      margin-left: -130px;
+      width: 260px;
+      height: 408px;
+      @include bgi("wcard");
+      background-size: 100%;
+      transform-origin: 50% 120%;
+      transform: rotate(-30deg);
+    }
+    &-phone {
+      position: relative;
+      display: inline-block;
+      // contain: layout style;
+    }
+    &-phone-shadow {
+      position: absolute;
+      opacity: 0.8;
+      top: -8.577%;
+      left: -41.289%;
+      right: -14.68%;
+      bottom: -11.483%;
+      @include bgi("phone-shadow");
+      background-size: contain;
+    }
+    &-phone-case {
+      position: relative;
+      z-index: 1;
+      width: 327px;
+      height: 688px;
+      @include bgi("phone");
+      background-size: cover;
     }
   }
 }

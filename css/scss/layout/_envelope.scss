@@ -1,0 +1,10 @@
+.envelope-content {
+  z-index: 1;
+  position: relative;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+  height: 105vh;
+  min-height: 850px;
+  transform-style: preserve-3d;
+}
