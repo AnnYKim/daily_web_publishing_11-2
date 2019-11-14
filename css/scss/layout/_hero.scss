@@ -2,7 +2,8 @@
   position: relative;
 
   &-content {
-    outline: 4px dotted red;
+    // outline: 4px dotted red;
+    padding: 0 0 250px 0;
   }
   &-body {
     @include flexbox();

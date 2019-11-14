@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: mistyrose;
+    background: #fdf0e5;
   }
   &-content {
     z-index: 1;
@@ -25,14 +25,15 @@
   }
 
   &-container {
-    max-width: 1600px;
-    padding: 0 270px 0 270px;
+    // max-width: 1600px;
+    // padding: 0 270px 0 270px;
   }
 
   &-title {
     font-size: 80px;
-    letter-spacing: -5.97px;
+    letter-spacing: -5px;
     line-height: 86px;
+    color: #2128bd;
   }
 
   &-text {
@@ -40,5 +41,6 @@
     font-size: 24px;
     letter-spacing: -0.4px;
     line-height: 26px;
+    color: #2128bd;
   }
 }
