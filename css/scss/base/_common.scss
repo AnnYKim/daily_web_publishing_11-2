@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 270px 0 270px;
+}
+
 // .text-hidden {
 //   position: absolute;
 //   @include text-hidden;

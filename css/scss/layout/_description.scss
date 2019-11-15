@@ -1,0 +1,19 @@
+.description {
+  &-content {
+    @include flexbox();
+    @include align-items(center);
+  }
+  &-body {
+    width: 100%;
+  }
+  &-grid {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  &-figure {
+    .img {
+      max-width: 100%;
+    }
+  }
+}

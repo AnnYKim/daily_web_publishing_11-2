@@ -25,11 +25,25 @@
   }
   &-roll-item-title {
     position: relative;
-    text-align: center;
+    text-align: left;
     font-weight: 500;
     color: #030762;
     font-size: 40px;
     letter-spacing: -0.67px;
     line-height: 52px;
+
+    &:before {
+      // blend mode를 위한 텍스트 복사
+      z-index: 1;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      color: #fff;
+      content: attr(data-text);
+      mix-blend-mode: overlay;
+    }
   }
 }
