@@ -8,6 +8,35 @@
   padding: 0 270px 0 270px;
 }
 
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  & + [class$="-content"] {
+    position: relative;
+    z-index: 1;
+  }
+}
+.fill {
+  &[class$="--tertiary"] {
+    background: #fdf0e5;
+  }
+  &[class$="--secondary"] {
+    background: #eefbff;
+  }
+}
+
+.grid {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+.--right {
+  padding-left: 90px;
+}
+
 // .text-hidden {
 //   position: absolute;
 //   @include text-hidden;

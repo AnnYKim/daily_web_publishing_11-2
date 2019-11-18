@@ -1,13 +1,6 @@
 .envelope {
   position: relative;
-  &-fill {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fdf0e5;
-  }
+
   &-content {
     z-index: 1;
     position: relative;
@@ -25,8 +18,6 @@
   }
 
   &-container {
-    // max-width: 1600px;
-    // padding: 0 270px 0 270px;
   }
 
   &-title {

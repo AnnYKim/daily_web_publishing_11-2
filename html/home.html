@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>WICKRET</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script>
 </head>
 
 <body>
@@ -54,7 +56,7 @@
     <!-- //end of header -->
 
     <section class="section envelope">
-      <div class="envelope-fill fill--tertiary "></div>
+      <div class="fill fill--tertiary"></div>
       <div class="envelope-particle"></div>
       <div class="envelope-content">
         <div class="envelope-body">
@@ -71,7 +73,7 @@
         </div>
       </div>
     </section>
-    <!-- end of envelope -->
+    <!-- end of envelope-->
 
     <section class="section showreel">
       <div class="showreel-content">
@@ -107,13 +109,15 @@
       <div class="description-content">
         <div class="description-body">
           <div class="container description-container">
-            <div class="description-grid">
-              <div class="description-grid-col-left">
+            <div class="grid">
+              <div class="grid-col grid-col--left">
                 <div class="description-figure">
                   <img class="img" src="../images/character@2x.png" alt="character">
+                  <img class="img" src="../images/clouds@2x.png" alt="clouds">
+                  <img class="img" src="../images/particle01@2x.png" alt="particle">
                 </div>
               </div>
-              <div class="description-grid-col-right">
+              <div class="grid-col --right">
                 <h2 class="description-header">
                   Get Paid early
                 </h2>
@@ -121,7 +125,7 @@
                   Your paycheck will be automatically deposited up to two days early
                 </p>
                 <div class="description-action">
-                  <button class="btn btn-download">
+                  <button class="btn btn-rounded btn-transparent">
                     <span class="btn-bound">
                       <span class="btn-text" data-text="Download">Download</span>
                     </span>
@@ -134,6 +138,105 @@
       </div>
     </section>
     <!-- end of description -->
+
+    <section class="section envelope">
+      <div class="fill fill--secondary"></div>
+      <div class="envelope-particle"></div>
+      <div class="envelope-content">
+        <div class="envelope-body">
+          <div class="envelope-container">
+            <h2 class="envelope-title">
+              Customer Service
+              <br />
+              on Your Terms
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of envelope-->
+
+
+    <section class="section feature">
+      <div class="fill fill--secondary"></div>
+      <div class="feature-content">
+        <div class="feature-body">
+          <div class="container feature-container">
+            <div class="feature-grid">
+              <div class="grid-col grid-col--left">
+                <div class="feature-demo">
+                  <div class="feature-demo-item --visible">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463" id="test">
+                      <defs>
+                        <filter id="feaute-demo-filter-1">
+                          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" stitchTiles="noStitch"
+                            numOctaves="5" seed="2" result="warp"></feTurbulence>
+                          <feDisplacementMap xChannelSelector="R" yChannelSelector="B" scale="1" in="SourceGraphic"
+                            in2="warp"></feDisplacementMap>
+                        </filter>
+                      </defs>
+                      <image xlink:href="../images/featureDemo1@2x.png" style="filter:url(#feaute-demo-filter-1)"
+                        width="463" height="463" x="0" y="0"></image>
+                    </svg>
+                  </div>
+                  <div class="feature-demo-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463">
+                      <defs>
+                        <filter id="feaute-demo-filter-2">
+                          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" stitchTiles="noStitch"
+                            numOctaves="5" seed="2" result="warp"></feTurbulence>
+                          <feDisplacementMap xChannelSelector="R" yChannelSelector="B" scale="80" in="SourceGraphic"
+                            in2="warp"></feDisplacementMap>
+                        </filter>
+                      </defs>
+                      <image xlink:href="../images/featureDemo2@2x.png" style="filter:url(#feaute-demo-filter-2)"
+                        width="463" height="463" x="0" y="0"></image>
+                    </svg>
+                  </div>
+                  <div class="feature-demo-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 463 463">
+                      <defs>
+                        <filter id="feaute-demo-filter-2">
+                          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.003" stitchTiles="noStitch"
+                            numOctaves="5" seed="2" result="warp"></feTurbulence>
+                          <feDisplacementMap xChannelSelector="R" yChannelSelector="B" scale="80" in="SourceGraphic"
+                            in2="warp"></feDisplacementMap>
+                        </filter>
+                      </defs>
+                      <image xlink:href="../images/featureDemo3@2x.png" style="filter:url(#feaute-demo-filter-2)"
+                        width="463" height="463" x="0" y="0"></image>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-col --right">
+                <div class="feature-items">
+                  <p class="feature-text --active">
+                    Real-time alerts
+                    <s class="emoji emoji-alarm"></s>
+                    next day settlement
+                  </p>
+                </div>
+                <div class="feature-items">
+                  <p class="feature-text --active">
+                    Flexible billing
+                    <s class="emoji emoji-book"></s>
+                    and payments
+                  </p>
+                </div>
+                <div class="feature-items">
+                  <p class="feature-text --active">
+                    Banking for all
+                    <s class="emoji emoji-darts"></s>
+                    personal, business
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script>
 
@@ -160,6 +263,20 @@
         console.dir(e.pageY)
 
       }, false);
+
+
+
+      // var timeline = anime.timeline({
+      //   duration: 1000,
+      //   autoplay: true
+      // });
+      // timeline.add({
+      //   targets: ['#test image', 'feTurbulence', 'feDisplacementMap'],
+      //   baseFrequency: [0.01, 0],
+      //   numOctabes: 5,
+      //   scale: 1,
+      // });
+
 
     </script>
 

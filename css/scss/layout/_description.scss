@@ -2,18 +2,35 @@
   &-content {
     @include flexbox();
     @include align-items(center);
+    padding-bottom: 180px;
   }
   &-body {
     width: 100%;
   }
-  &-grid {
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
-  }
   &-figure {
+    position: relative;
     .img {
+      position: absolute;
+      top: 0;
+      left: 0;
       max-width: 100%;
+
+      &:first-child {
+        position: static;
+      }
     }
+  }
+  &-header {
+    font-size: 28px;
+    letter-spacing: -0.48px;
+    line-height: 42px;
+  }
+  &-text {
+    font-size: 28px;
+    letter-spacing: -0.48px;
+    line-height: 42px;
+  }
+  &-action {
+    margin: 50px 0 0 0;
   }
 }

@@ -1,0 +1,23 @@
+.emoji {
+  display: inline-block;
+  vertical-align: middle;
+  @include bgi("emoji");
+
+  &-alarm {
+    background-position: -77px -76px;
+    width: 25px;
+    height: 28px;
+  }
+
+  &-book {
+    background-position: 0 -109px;
+    width: 24px;
+    height: 29px;
+  }
+
+  &-darts {
+    background-position: -48px -76px;
+    width: 28px;
+    height: 28px;
+  }
+}

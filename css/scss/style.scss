@@ -3,6 +3,7 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/mediaQueries";
+@import "helpers/emoji";
 
 @import "base/font";
 // @import "base/svg";
@@ -12,10 +13,10 @@
 
 // @import "modules/header";
 // @import "modules/footer";
-// @import "modules/buttons";
-// @import "modules/logo";
+@import "modules/buttons";
 
 @import "layout/_hero";
 @import "layout/_envelope";
 @import "layout/_showreel";
 @import "layout/_description";
+@import "layout/_feature";

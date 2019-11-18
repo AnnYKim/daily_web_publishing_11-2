@@ -1,16 +1,45 @@
-.btn-basic {
-  display: inline-block;
-  margin-right: 10px;
-  padding: 20px 108px 20px 40px;
-  font-size: 14px;
-  letter-spacing: 0.05em;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 3px;
-  background-position: right 20px top 50%;
-  background-repeat: no-repeat;
+.btn-transparent {
+  color: #005ffe;
+  border: 1px rgba(0, 95, 254, 0.3) solid;
+}
 
-  &:hover {
-    background-color: transparent;
+.btn-rounded {
+  height: 60px;
+  padding: 0 39px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.21px;
+
+  .btn-text {
+    position: relative;
+    display: block;
+    transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: left center;
+
+    &:after {
+      position: absolute;
+      top: 150%;
+      display: block;
+      content: attr(data-text);
+      transform: skewY(30deg);
+      transform-origin: left center;
+      transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+    }
   }
+
+  &:hover .btn-text {
+    transform: translateY(-150%) skewY(7deg);
+
+    &:after {
+      transform: skewY(-7deg);
+    }
+  }
+}
+
+.btn-bound {
+  display: block;
+  overflow: hidden;
 }
