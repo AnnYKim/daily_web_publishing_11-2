@@ -23,13 +23,12 @@
       <div class="hero-particle"></div>
       <div class="hero-content">
         <div class="hero-body">
-          <div class="hero-title">
-            <div class="hero-title-shape">
-              <div class="hero-title-cursor"></div>
-              <div class="cursor"></div>
+          <div class="shape-title">
+            <div class="shape-title-shape">
+              <div class="cursor cursor-hero"></div>
             </div>
-            <div class="hero-title-blend">
-              <h1 class="hero-title-text">
+            <div class="shape-title-blend">
+              <h1 class="shape-title-text">
                 <div class="block">
                   <div>Banking</div>
                 </div>
@@ -39,7 +38,6 @@
                 </div>
               </h1>
             </div>
-
           </div>
         </div>
         <div class="hero-footer">
@@ -237,15 +235,70 @@
         </div>
       </div>
     </section>
+    <!-- end of features -->
 
+    <section class="section advantage">
+      <div class="advantage-particle">
+      </div>
+      <div class="advantage-content">
+        <div class="advantage-body">
+          <div class="container advantage-container">
+            <div class="shape-title">
+              <div class="shape-title-shape">
+                <div class="cursor cursor-advantage"></div>
+              </div>
+              <div class="shape-title-blend">
+                <h1 class="shape-title-text">
+                  <div class="block">
+                    <div>Security</div>
+                  </div>
+                </h1>
+              </div>
+            </div>
+            <div class="advantage-details">
+              <div class="grid details-grid">
+                <div class="grid-col">
+                  <p class="advantage-text">
+                    <strong>Superior Security.</strong> Security and fraud prevention is at the core of our business.
+                  </p>
+                </div>
+                <div class="grid-col">
+                  <p class="advantage-text">
+                    <strong>Fraud Protection.</strong> Our fraud tools can help your business minimize lost sales.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of advantage -->
+
+    <section class="section envelope">
+      <div class="fill fill--tertiary"></div>
+      <div class="envelope-particle"></div>
+      <div class="envelope-content">
+        <div class="envelope-body">
+          <div class="envelope-container">
+            <h2 class="envelope-title">
+              A powerful routing
+              <br />
+              and payout engine
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of envelope-->
     <script>
 
 
       var hero = document.querySelector(".hero");
 
-      var title = document.querySelector(".hero-title");
-      var cursor = document.querySelector(".hero-title-cursor");
-      var c = document.querySelector(".cursor");
+      var title = document.querySelector(".shape-title");
+      var cursor = document.querySelector(".cursor-hero");
+      // var c = document.querySelector(".cursor");
 
       hero.addEventListener('mousemove', function (e) {
 
