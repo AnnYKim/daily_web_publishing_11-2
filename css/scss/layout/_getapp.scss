@@ -1,0 +1,68 @@
+.getapp {
+  position: relative;
+
+  .fill--getapp2 {
+    top: 30%;
+  }
+
+  &-content {
+    z-index: 1;
+    // overflow: hidden;
+    position: relative;
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    height: 100vh;
+    min-height: 630px; //868
+    min-height: 700px; //1024
+  }
+
+  &-body {
+    @include flexbox();
+    text-align: center;
+  }
+
+  &-container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  &-header {
+    display: inline-block;
+    max-width: 280px;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -2.24px;
+    line-height: 32px;
+
+    //768
+    max-width: 580px;
+    font-size: 60px;
+    letter-spacing: -4.48px;
+    line-height: 70px;
+
+    //1200
+    max-width: 700px;
+    font-size: 70px;
+    letter-spacing: -5.22px;
+    line-height: 74px;
+  }
+
+  &-store {
+    margin: 23px 0 -7px 0;
+
+    //768
+    margin: 45px -10px 0 -16px;
+
+    //1200
+    margin: 65px 0 0 0;
+  }
+
+  &-store-item {
+    display: inline-block;
+    padding: 7px 0;
+    padding: 0 16px; //768
+  }
+}

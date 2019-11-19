@@ -3,23 +3,13 @@
     @include flexbox();
     @include align-items(center);
     padding-bottom: 180px;
+    height: 105vh;
+    min-height: 650px;
+    padding: 130px 0;
   }
   &-body {
     width: 100%;
   }
-  // &-figure {
-  //   position: relative;
-  //   .img {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     max-width: 100%;
-
-  //     &:first-child {
-  //       position: static;
-  //     }
-  //   }
-  // }
   &-header {
     font-size: 28px;
     letter-spacing: -0.48px;
@@ -59,11 +49,10 @@
   width: 100%;
 
   .grid-col {
-    // flex-grow: 1;
-    // max-width: 100%;
     margin: 0;
   }
   .grid-col.--left {
+    max-width: 56%;
   }
   .grid-col.--right {
     padding-left: 70px;

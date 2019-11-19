@@ -43,3 +43,47 @@
   display: block;
   overflow: hidden;
 }
+
+.btn-store {
+  @include inline-flex();
+  @include align-items(center);
+  border: 1px rgba(0, 95, 254, 0.3) solid;
+  font-weight: 500;
+  text-align: left;
+  color: #2128bd;
+
+  //normal
+  height: 57px;
+  min-width: 165px;
+  padding: 0 18px;
+  font-size: 13px;
+  border-radius: 10px;
+  line-height: 14px;
+  letter-spacing: -0.17px;
+
+  //768
+  height: 72px;
+  min-width: 203px;
+  padding: 0 23px;
+  font-size: 16px;
+  border-radius: 20px;
+  line-height: 18px;
+  letter-spacing: -0.21px;
+
+  &-icon {
+    display: block;
+    line-height: 0;
+
+    //normal
+    font-size: 20px;
+    min-width: 37px;
+
+    //768
+    min-width: 40px;
+    font-size: 22px;
+  }
+
+  &-title b {
+    letter-spacing: 0;
+  }
+}
