@@ -86,4 +86,9 @@
   &-title b {
     letter-spacing: 0;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    @include pointer-none;
+  }
 }

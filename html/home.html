@@ -13,9 +13,46 @@
 
 <body>
   <div class="wrap">
-
+    <div id="tester"></div>
     <nav class="nav">
-      <div class="nav-container"></div>
+      <div class="nav-strip">
+        <div class="nav-container">
+          <div class="nav-grid">
+            <div class="nav-grid-col --left">
+              <div class="nav-logo" role="banner">
+                <a href="www.nykim.work" aria-label="Wickret" title="scroll to top">
+                  <img src="../images/logo.png" srcset="../images/logo@2x.png 2x" alt="logo"></a>
+              </div>
+            </div>
+            <div class="nav-grid-col --right" id="testMouse">
+              <div class="nav-menu" role="navigation">
+                <a href="nykim.work" id="testMenu" target="_self" class="nav-menu-item" aria-selected="true">
+                  <span class="nav-menu-item-bound">
+                    <span class="nav-menu-item-text" data-text="Benefits">Benefits</span>
+                  </span>
+                </a>
+                <!-- <a href class="nav-menu-item">
+                  <span class="nav-menu-item-bound">
+                    <span class="nav-menu-item-text" data-text="Security">Security</span>
+                  </span>
+                </a>
+                <div class="nav-menu-btn">
+                  <button class="btn btn-sign">
+                    <span class="nav-menu-btn-bound">
+                      <div class="span-nav-menu-btn-text" data-text="Download">Download</div>
+                    </span>
+                  </button>
+                </div>
+                <div class="nev-menu-burger">
+                  <button class="btn btn-burger" label="Burger Menu">
+                    <span></span><span></span>
+                  </button>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <header class="hero">
@@ -336,7 +373,7 @@
             </h2>
             <div class="getapp-store">
               <div class="getapp-store-item">
-                <button class="btn btn-store">
+                <button class="btn btn-store" disabled>
                   <div class="btn-store-icon">
                     <svg class="svgsprite --apple">
                       <use xlink:href="../images/svgsprites.svg#apple"></use>
@@ -349,8 +386,11 @@
                 </button>
               </div>
               <div class="getapp-store-item">
-                <button class="btn btn-store">
-                  <div class="btn-store-icon"></div>
+                <button class="btn btn-store" disabled>
+                  <div class="btn-store-icon">
+                    <svg class="svgsprite --apple">
+                      <use xlink:href="../images/svgsprites.svg#gplay-c"></use>
+                    </svg></div>
                   <p class="btn-store-title">
                     Soon on <br />
                     <b>Google Play</b>
@@ -363,8 +403,11 @@
         <div class="getapp-footer">
           <div class="getapp-footer-container">
             <a href="nykim.work" class="getapp-dev">
-              <span>cuberto</span>
-              <span>Design & Development</span>
+              <img src="../images/cuberto.png" srcset="../images/cuberto@2x.png 2x" alt="cuberto logo">
+              <p class="text-hidden">
+                cuberto
+              </p>
+              <p class="getapp-dev-text">Design & Development</p>
             </a>
           </div>
         </div>
@@ -395,7 +438,7 @@
         y = y - (cursorSize / 2) - (windowH / 2);
         cursor.style.transform = "translate3d(" + x + "px," + y + "px,0)";
 
-        console.dir(e.pageY)
+        // console.dir(e.pageY)
 
       }, false);
 
@@ -412,9 +455,8 @@
       //   scale: 1,
       // });
 
-
     </script>
-
+    <script src="magnetic.js"></script>
   </div>
 </body>
 

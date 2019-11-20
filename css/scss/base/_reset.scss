@@ -70,6 +70,10 @@ a:active {
   text-decoration: none;
   @include font-main;
   color: inherit;
+}
+
+a:hover,
+a:active {
   outline: 0;
 }
 
@@ -219,4 +223,8 @@ body {
 
 .wrap {
   position: relative;
+}
+
+a:focus {
+  outline: 4px solid purple;
 }

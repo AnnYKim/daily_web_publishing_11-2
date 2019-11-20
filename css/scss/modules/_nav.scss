@@ -1,0 +1,112 @@
+.nav {
+  &-strip {
+    z-index: 99; //항상 최상단에 푯;
+    position: fixed;
+    top: 25px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 64px;
+    transition: top 0.4s, transform 0.4s, background 0.3s, -webkit-transform 0.4s, -moz-transform 0.4s,
+      -o-transform 0.4s;
+  }
+
+  &-container {
+    height: 100%;
+  }
+
+  &-grid {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+    height: 100%;
+  }
+
+  &-menu {
+    //메뉴 영역
+    padding: 30px;
+  }
+
+  &-menu-item {
+    //각 링크 메뉴
+    // position: fixed !important;
+    // pointer-events: none;
+    width: 120px;
+    //normal
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.21px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    //1024
+    font-size: 15px;
+    letter-spacing: -0.22px;
+
+    //1200
+    padding: 20px 30px;
+    background: rgba(191, 162, 30, 0.548);
+
+    // &:hover {
+    //   .nav-menu-item-text {
+    //     transform: skewY(7deg) translateY(-140%);
+    //     &:after {
+    //       transform: skewY(-7deg);
+    //     }
+    //   }
+    // }
+
+    &-bound {
+      //영역 지정 용도
+      display: block;
+      overflow: hidden;
+    }
+
+    &-text {
+      //실질 텍스트
+      position: relative;
+      display: block;
+      transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+      transform-origin: left center;
+
+      // &:before {
+      //   //마우스 움직임을 위해 영역 넓게 잡기
+      //   content: "";
+      //   display: block;
+      //   position: absolute;
+      //   top: -20px;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: -20px;
+      //   background: gold;
+      // }
+
+      &:after {
+        // hover시 나타날 텍스트 효과
+        content: attr(data-text);
+        display: block;
+        position: absolute;
+        top: 140%;
+        color: red;
+        transform: skewY(30deg);
+        transform-origin: left center;
+        transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+  }
+}
+
+#testMouse {
+  background: gold;
+}
+
+#tester {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+}

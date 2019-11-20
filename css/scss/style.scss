@@ -11,10 +11,9 @@
 @import "base/common";
 // @import "base/animation";
 
-// @import "modules/header";
-// @import "modules/footer";
-@import "modules/shape-title";
-@import "modules/buttons";
+@import "modules/_nav";
+@import "modules/_shape-title";
+@import "modules/_buttons";
 
 @import "layout/_hero";
 @import "layout/_envelope";

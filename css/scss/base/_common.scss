@@ -52,10 +52,17 @@
   vertical-align: middle;
 }
 
-// .text-hidden {
-//   position: absolute;
-//   @include text-hidden;
-// }
+.text-hidden {
+  position: absolute;
+  @include text-hidden;
+}
+
+.nav-container,
+.getapp-footer-container {
+  padding: 0 30px;
+  padding: 0 50px; //768
+  padding: 0 70px; //1600
+}
 
 // .visible {
 //   visibility: visible !important;
