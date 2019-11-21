@@ -1,13 +1,13 @@
 /**
  * -----------------------------------------------
- * Last Modified: 2019-11-21 17:17:48
+ * Last Modified: 2019-11-21 18:24:21
  * Author: nana (nykim@nykim.net)
  * Description: 하루퍼블 CSS
  * -----------------------------------------------
  */
 
 /*! style.css */
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap");
 .emoji {
 		display: inline-block;
 		vertical-align: middle;
@@ -1656,6 +1656,7 @@ a:focus {
 }
 
 .showreel-content {
+		z-index: 1;
 		display: -webkit-box;
 		display: -moz-box;
 		display: -ms-flexbox;
@@ -1665,21 +1666,164 @@ a:focus {
 		-moz-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
+		-webkit-justify-content: center;
+		-moz-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		-ms-flex-pack: center;
+		width: 100%;
+}
+
+.showreel-roll {
+		margin: -180px 0;
+		padding: 190px 0;
+}
+
+@media screen and (min-width: 768px) {
+		.showreel-roll {
+				margin: -340px 0;
+				padding: 250px 0;
+		}
+}
+
+@media screen and (min-width: 1024px) {
+		.showreel-roll {
+				margin: -245px 0;
+		}
+}
+
+.showreel-roll-item {
+		position: relative;
+		margin: 180px 0;
+		max-width: 260px;
+		min-width: 260px;
+}
+
+@media screen and (min-width: 768px) {
+		.showreel-roll-item {
+				margin: 340px 0;
+				max-width: 592px;
+				min-width: 592px;
+		}
+}
+
+@media screen and (min-width: 1024px) {
+		.showreel-roll-item {
+				margin: 245px 0;
+				max-width: 672px;
+				min-width: 672px;
+		}
+}
+
+.showreel-roll-item:first-child {
+		margin-left: 0;
+}
+
+.showreel-roll-item-title {
+		position: relative;
+		text-align: center;
+		font-size: 21px;
+		letter-spacing: -0.35px;
+		line-height: 28px;
+		color: #030762;
+}
+
+@media screen and (min-width: 768px) {
+		.showreel-roll-item-title {
+				font-size: 36px;
+				letter-spacing: -0.6px;
+				line-height: 46px;
+		}
+}
+
+@media screen and (min-width: 1200px) {
+		.showreel-roll-item-title {
+				font-size: 40px;
+				letter-spacing: -0.67px;
+				line-height: 52px;
+				font-weight: 500;
+		}
+}
+
+.showreel-roll-item-title:before {
+		z-index: 1;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		color: #fff;
+		content: attr(data-text);
+		mix-blend-mode: overlay;
+}
+
+.showreel-roll-item-image {
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 120px;
+		height: 180px;
+		border-radius: 10px;
+		transform: translate3d(-50%, -50%, 0);
+		-moz-pointer-events: none;
+		-webkit-pointer-events: none;
+		-o-pointer-events: none;
+		-ms-pointer-events: none;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+		.showreel-roll-item-image {
+				width: 184px;
+				height: 266px;
+				border-radius: 22px;
+		}
+}
+
+@media screen and (min-width: 1200px) {
+		.showreel-roll-item-image {
+				width: 247px;
+				height: 357px;
+				border-radius: 30px;
+		}
+}
+
+.showreel-roll-item-image .showreel-roll-item-poster {
+		position: absolute;
+		top: -2px;
+}
+
+.showreel-roll-item-image video {
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 100%;
+}
+
+.showreel-roll-item.-visible .showreel-roll-item-image {
+		opacity: 1;
+}
+
+.desktop .showreel-content {
 		-webkit-justify-content: flex-start;
 		-moz-justify-content: flex-start;
 		-ms-justify-content: flex-start;
 		justify-content: flex-start;
 		-ms-flex-pack: flex-start;
-		width: 100%;
 		height: 100vh;
 		overflow: hidden;
 }
 
-.showreel-roll {
-		margin: 0 calc(50vw - 672px / 2);
+.desktop .showreel-roll {
+		margin: 0 calc(50vw - 260px / 2);
+		padding: 0;
 }
 
-.showreel-roll-inner {
+.desktop .showreel-roll-inner {
 		display: -webkit-box;
 		display: -moz-box;
 		display: -ms-flexbox;
@@ -1696,38 +1840,32 @@ a:focus {
 		-ms-flex-pack: center;
 }
 
-.showreel-roll-item {
-		max-width: 672px;
-		min-width: 672px;
-		margin: 0 40px;
+.desktop .showreel-roll-item {
+		margin: 0 10px;
 }
 
-.showreel-roll-item:first-child {
+.desktop .showreel-roll-item:first-child {
 		margin-left: 0;
 }
 
-.showreel-roll-item-title {
+.desktop .showreel-roll-item-title {
 		position: relative;
-		text-align: left;
-		font-weight: 500;
-		color: #030762;
-		font-weight: 600;
-		font-size: 40px;
-		letter-spacing: -0.67px;
-		line-height: 52px;
 }
 
-.showreel-roll-item-title:before {
-		z-index: 1;
+.desktop .showreel-roll-item-title:after {
+		content: "";
 		display: block;
 		position: absolute;
+		outline: 3px solid red;
+}
+
+.desktop .showreel-roll-item-image {
 		top: 0;
 		left: 0;
-		right: 0;
-		bottom: 0;
-		color: #fff;
-		content: attr(data-text);
-		mix-blend-mode: overlay;
+		will-change: transform;
+		-webkit-clip-path: inset(0 0 0 0 round 10px);
+		clip-path: inset(0 0 0 0 round 10px);
+		transform: translate3d(0px, 0px, 0px);
 }
 
 .description-content {

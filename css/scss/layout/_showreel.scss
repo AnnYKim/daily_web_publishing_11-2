@@ -1,37 +1,68 @@
 .showreel {
   &-content {
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(flex-start);
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  &-roll {
-    margin: 0 calc(50vw - 672px / 2);
-  }
-  &-roll-inner {
+    z-index: 1;
     @include flexbox();
     @include align-items(center);
     @include justify-content(center);
+    width: 100%;
   }
+  &-roll {
+    margin: -180px 0;
+    padding: 190px 0;
+
+    @include res--tablet {
+      margin: -340px 0;
+      padding: 250px 0;
+    }
+
+    @include res--laptop {
+      margin: -245px 0;
+    }
+  }
+
   &-roll-item {
-    max-width: 672px;
-    min-width: 672px;
-    margin: 0 40px;
+    position: relative;
+    margin: 180px 0;
+    max-width: 260px;
+    min-width: 260px;
+
+    @include res--tablet {
+      margin: 340px 0;
+      max-width: 592px;
+      min-width: 592px;
+    }
+
+    @include res--laptop {
+      margin: 245px 0;
+      max-width: 672px;
+      min-width: 672px; //?width 672랑 뭐가 다르지? -> 같은 듯....??
+    }
+
     &:first-child {
       margin-left: 0;
     }
   }
+
   &-roll-item-title {
     position: relative;
-    text-align: left;
-    font-weight: 500;
+    text-align: center;
+    font-size: 21px;
+    letter-spacing: -0.35px;
+    line-height: 28px;
     color: #030762;
-    font-weight: 600;
-    font-size: 40px;
-    letter-spacing: -0.67px;
-    line-height: 52px;
+
+    @include res--tablet {
+      font-size: 36px;
+      letter-spacing: -0.6px;
+      line-height: 46px;
+    }
+
+    @include res--laptopLG {
+      font-size: 40px;
+      letter-spacing: -0.67px;
+      line-height: 52px;
+      font-weight: 500;
+    }
 
     &:before {
       // blend mode를 위한 텍스트 복사
@@ -46,5 +77,101 @@
       content: attr(data-text);
       mix-blend-mode: overlay;
     }
+  }
+
+  &-roll-item-image {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120px;
+    height: 180px;
+    border-radius: 10px;
+    transform: translate3d(-50%, -50%, 0);
+    @include pointer-none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    @include res--tablet {
+      width: 184px;
+      height: 266px;
+      border-radius: 22px;
+    }
+
+    @include res--laptopLG {
+      width: 247px;
+      height: 357px;
+      border-radius: 30px;
+    }
+
+    .showreel-roll-item-poster {
+      position: absolute;
+      top: -2px;
+    }
+
+    video {
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.showreel-roll-item.-visible {
+  .showreel-roll-item-image {
+    opacity: 1;
+  }
+}
+
+//이하 Desktop 접속 전용
+
+.desktop .showreel {
+  &-content {
+    @include justify-content(flex-start);
+    height: 100vh;
+    overflow: hidden;
+  }
+  &-roll {
+    margin: 0 calc(50vw - 260px / 2);
+    padding: 0;
+  }
+  &-roll-inner {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+  }
+  &-roll-item {
+    margin: 0 10px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &-roll-item-title {
+    position: relative;
+
+    &:after {
+      //마우스용 범위 넓게 잡기
+      content: "";
+      display: block;
+      position: absolute;
+      // top: -20vh;
+      // left: -100px;
+      // right: -100px;
+      // bottom: -15vh;
+      outline: 3px solid red;
+    }
+  }
+
+  &-roll-item-image {
+    top: 0;
+    left: 0;
+    will-change: transform;
+    -webkit-clip-path: inset(0 0 0 0 round 10px);
+    clip-path: inset(0 0 0 0 round 10px);
+    // opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
   }
 }
