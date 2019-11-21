@@ -2,15 +2,29 @@
   position: relative;
 
   &-content {
-    // outline: 4px dotted red;
-    padding: 0 0 250px 0;
+    min-height: 520px;
+    padding-top: 180px;
+    padding-bottom: 150px;
+
+    @include res--tablet {
+      padding-top: 0;
+      padding-bottom: 200px;
+    }
+    @include res--desktop {
+      padding-bottom: 250px;
+    }
   }
+
   &-body {
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
     width: 100%;
-    height: 100vh;
+    text-align: center;
+
+    @include res--tablet {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      height: 100vh;
+    }
   }
 
   &-title {
@@ -70,10 +84,26 @@
       display: inline-block;
       font-weight: 600;
       letter-spacing: -0.075em;
-      font-size: 120px;
       text-rendering: optimizeSpeed;
       line-height: 85%;
-      font-size: 8vw;
+
+      font-size: 46px;
+
+      @include res--mobileSM {
+        font-size: 52px;
+      }
+
+      @include res--tablet {
+        font-size: 90px;
+      }
+
+      @include res--laptop {
+        font-size: 110px;
+      }
+
+      @include res--desktop {
+        font-size: 120px;
+      }
     }
 
     br {
@@ -91,34 +121,72 @@
   }
 
   &-footer {
-    @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
-    // background: gold;
-    margin-top: -100px;
+    margin-top: 150px;
+
+    @include res--tablet {
+      margin-top: -100px;
+    }
+
+    @include res--desktop {
+      margin-top: -150px;
+    }
   }
 
   &-demo {
     position: relative;
+    @include flexbox();
+    @include justify-content(center);
 
     &-card {
       position: absolute;
       display: block;
-      top: 80px;
-      left: 50%;
-      margin-left: -130px;
-      width: 260px;
-      height: 408px;
-      @include bgi("wcard");
       background-size: 100%;
       transform-origin: 50% 120%;
-      transform: rotate(-30deg);
+      transform: rotate(-35deg);
+
+      //기본값
+      left: 40%;
+      top: 45px;
+      width: 170px;
+      height: 267px;
+      //백그라운드 이미지
+      @include bgi("wcard-xs");
+
+      @include img2x {
+        @include bgi("wcard-xs@2x");
+      }
+      @include img2x--tablet {
+        @include bgi("wcard-sm@2x");
+      }
+      @include img2x--desktop {
+        @include bgi("wcard@2x");
+      }
+
+      @include res--tablet {
+        left: 50%;
+        top: 90px;
+        width: 220px;
+        height: 345px;
+        margin-left: -110px;
+        //백그라운드 이미지
+        @include bgi("wcard-sm");
+      }
+
+      @include res--desktop {
+        top: 80px;
+        margin-left: -130px;
+        width: 260px;
+        height: 408px;
+        //백그라운드 이미지
+        @include bgi("wcard");
+      }
     }
+
     &-phone {
       position: relative;
       display: inline-block;
-      // contain: layout style;
     }
+
     &-phone-shadow {
       position: absolute;
       opacity: 0.8;
@@ -129,13 +197,61 @@
       @include bgi("phone-shadow");
       background-size: contain;
     }
+
     &-phone-case {
       position: relative;
       z-index: 1;
-      width: 327px;
-      height: 688px;
       @include bgi("phone");
+      @include img2x--tablet {
+        @include bgi("phone@2x");
+      }
       background-size: cover;
+
+      //nomral
+      width: 212.55px;
+      height: 447.2px;
+
+      @include res--tablet {
+        width: 277.95px;
+        height: 584.8px;
+      }
+
+      @include res--desktop {
+        width: 327px;
+        height: 688px;
+      }
+    }
+    &-phone-screen {
+      //비디오 영역
+      z-index: 1;
+      position: absolute;
+      border-radius: 25px;
+      overflow: hidden;
+
+      //normal
+      top: 8.45px;
+      left: 6.5px;
+      width: 199.55px;
+      height: 430.3px;
+
+      @include res--tablet {
+        top: 11.05px;
+        left: 8.5px;
+        width: 260px;
+        height: 562px;
+      }
+
+      @include res--desktop {
+        top: 13px;
+        left: 10px;
+        width: 307px;
+        height: 662px;
+        border-radius: 30px;
+      }
+
+      video {
+        width: 100%;
+      }
     }
   }
 }

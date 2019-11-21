@@ -1,5 +1,6 @@
 .section {
   position: relative;
+  overflow: hidden; //TODO:삭제예정
 }
 
 .container {
@@ -60,8 +61,14 @@
 .nav-container,
 .getapp-footer-container {
   padding: 0 30px;
-  padding: 0 50px; //768
-  padding: 0 70px; //1600
+
+  @include res--tablet {
+    padding: 0 50px;
+  }
+
+  @include res--desktop {
+    padding: 0 70px; //1600
+  }
 }
 
 // .visible {

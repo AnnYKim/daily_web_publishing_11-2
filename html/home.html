@@ -20,43 +20,56 @@
           <div class="nav-grid">
             <div class="nav-grid-col --left">
               <div class="nav-logo" role="banner">
-                <a href="www.nykim.work" aria-label="Wickret" title="scroll to top">
+                <a class="nav-logo-link" href="www.nykim.work" aria-label="Wickret" title="scroll to top">
                   <img src="../images/logo.png" srcset="../images/logo@2x.png 2x" alt="logo"></a>
               </div>
             </div>
-            <div class="nav-grid-col --right" id="testMouse">
+            <div class="nav-grid-col --right">
               <div class="nav-menu" role="navigation">
-                <a href="nykim.work" id="testMenu" target="_self" class="nav-menu-item" aria-selected="true">
+                <a href="nykim.work" id="testMenu" class="nav-menu-item">
                   <span class="nav-menu-item-bound">
                     <span class="nav-menu-item-text" data-text="Benefits">Benefits</span>
                   </span>
                 </a>
-                <!-- <a href class="nav-menu-item">
+                <a href class="nav-menu-item">
                   <span class="nav-menu-item-bound">
                     <span class="nav-menu-item-text" data-text="Security">Security</span>
                   </span>
                 </a>
-                <div class="nav-menu-btn">
-                  <button class="btn btn-sign">
-                    <span class="nav-menu-btn-bound">
-                      <div class="span-nav-menu-btn-text" data-text="Download">Download</div>
-                    </span>
-                  </button>
-                </div>
-                <div class="nev-menu-burger">
-                  <button class="btn btn-burger" label="Burger Menu">
-                    <span></span><span></span>
-                  </button>
-                </div> -->
+              </div>
+              <div class="nav-menu-btn">
+                <button class="btn btn-sign">
+                  <span class="btn-bound">
+                    <div class="btn-sign-text" data-text="Download">Download</div>
+                  </span>
+                </button>
+              </div>
+              <div class="nav-menu-burger">
+                <button class="btn btn-burger" label="Burger Menu">
+                  <span class="btn-burger-line"></span>
+                  <span class="btn-burger-line"></span>
+                </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-mobile">
+        <div class="nav-mobile-fill"></div>
+        <div class="nav-mobile-content">
+          <div class="nav-mobile-menu" role="navigation">
+            <a href="/" class="nav-mobile-item">
+              <span class="nav-mobile-item-text">Benefits</span>
+            </a>
+            <a href="/" class="nav-mobile-item">
+              <span class="nav-mobile-item-text">Security</span>
+            </a>
           </div>
         </div>
       </div>
     </nav>
 
     <header class="hero">
-      <!-- <div class="cursor"></div> -->
       <div class="hero-particle"></div>
       <div class="hero-content">
         <div class="hero-body">
@@ -83,6 +96,12 @@
             <div class="hero-demo-phone">
               <div class="hero-demo-phone-shadow"></div>
               <div class="hero-demo-phone-case"></div>
+              <div class="hero-demo-phone-screen">
+                <div class="hero-demo-phone-screen-video">
+                  <video preload="auto" loop="" muted="" autoplay="" playsinline="">
+                    <source src="../images/helloVideo.mp4" type="video/mp4"></video>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -456,6 +475,7 @@
       // });
 
     </script>
+    <script src="ui.js"></script>
     <script src="magnetic.js"></script>
   </div>
 </body>

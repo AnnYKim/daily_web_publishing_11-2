@@ -1,45 +1,37 @@
 // Break Point
-$large : 1800px;
-$desktop : 1664px;
-$laptop : 1460px;
-$laptop-sm: 1023px;
+$desktop: 1600px;
+$laptop-lg: 1200px;
+$laptop: 1024px;
 $tablet: 768px;
 $mobile: 540px;
-$mobile-sm: 480px;
+$mobile-sm: 375px;
 
 // ---------- * ----------
 
-// Large
-@mixin res--large {
-  @media screen and (max-width: #{$large}) {
+// Desktop
+@mixin res--desktop {
+  @media screen and (min-width: #{$desktop}) {
     @content;
   }
 }
 
-// Desktop
-@mixin res--desktop {
-  @media screen and (max-width: #{$desktop}) {
+// Laptop LG
+@mixin res--laptopLG {
+  @media screen and (min-width: #{$laptop-lg}) {
     @content;
   }
 }
 
 // Laptop
 @mixin res--laptop {
-  @media screen and (max-width: #{$laptop}) {
-    @content;
-  }
-}
-
-// Laptop SM
-@mixin res--laptopSM {
-  @media screen and (max-width: #{$laptop-sm}) {
+  @media screen and (min-width: #{$laptop}) {
     @content;
   }
 }
 
 // Tablet
 @mixin res--tablet {
-  @media screen and (max-width: #{$tablet}) {
+  @media screen and (min-width: #{$tablet}) {
     @content;
   }
 }
@@ -53,7 +45,47 @@ $mobile-sm: 480px;
 
 // Mobile SM
 @mixin res--mobileSM {
-  @media screen and (max-width: #{$mobile-sm}) {
+  @media screen and (min-width: #{$mobile-sm}) {
+    @content;
+  }
+}
+
+// @2x 대응
+
+@mixin img2x--desktop {
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: #{$desktop}),
+    not all,
+    (min-resolution: 192dpi) and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin img2x--laptopLG {
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: #{$laptop-lg}),
+    not all,
+    (min-resolution: 192dpi) and (min-width: #{$laptop-lg}) {
+    @content;
+  }
+}
+
+@mixin img2x--laptop {
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: #{$laptop}),
+    not all,
+    (min-resolution: 192dpi) and (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin img2x--tablet {
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: #{$tablet}),
+    not all,
+    (min-resolution: 192dpi) and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin img2x {
+  @media (-webkit-min-device-pixel-ratio: 2), not all, (min-resolution: 192dpi) {
     @content;
   }
 }

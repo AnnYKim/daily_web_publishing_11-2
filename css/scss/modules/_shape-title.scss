@@ -39,10 +39,25 @@
     display: inline-block;
     font-weight: 600;
     letter-spacing: -0.075em;
-    font-size: 120px;
     text-rendering: optimizeSpeed;
-    line-height: 85%;
-    font-size: 8vw;
+    line-height: 80%;
+    font-size: 46px;
+
+    @include res--mobileSM {
+      font-size: 52px;
+    }
+
+    @include res--tablet {
+      font-size: 90px;
+    }
+
+    @include res--laptop {
+      font-size: 110px;
+    }
+
+    @include res--desktop {
+      font-size: 120px;
+    }
   }
 
   br {

@@ -21,7 +21,6 @@ function move(e) {
   TweenMax.to(menu, 0.3, {
     x: x / a.width * movement,
     y: y / a.width * movement,
-    scale: 1.3,
     ease: Power2.easeOut
   });
 }
@@ -37,7 +36,6 @@ menu.addEventListener("mouseleave", function (e) {
   TweenMax.to(menu, 0.5, {
     x: 0,
     y: 0,
-    scale: 1,
     ease: Power2.easeOut
   });
 });
