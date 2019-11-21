@@ -6,6 +6,22 @@ $tablet: 768px;
 $mobile: 540px;
 $mobile-sm: 375px;
 
+// 활용이 힘들어보임 ㅠㅠ
+// $breakPoint: (
+//   "desktop": 1600,
+//   "laptopLG": 1200,
+//   "laptop": 1024,
+//   "tablet": 768,
+//   "mobile": 540,
+//   "mobileSM": 375
+// );
+
+@mixin res($screenSize) {
+  @media screen and (min-width: #{$screenSize}px) {
+    @content;
+  }
+}
+
 // ---------- * ----------
 
 // Desktop

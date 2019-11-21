@@ -7,9 +7,14 @@
     @include flexbox();
     @include align-items(center);
     @include justify-content(center);
-    height: 105vh;
-    min-height: 850px;
+    height: 70vh;
+    min-height: 455px;
     transform-style: preserve-3d;
+
+    @include res--tablet {
+      height: 150vh;
+      min-height: 850px;
+    }
   }
 
   &-body {
@@ -21,17 +26,294 @@
   }
 
   &-title {
-    font-size: 80px;
-    letter-spacing: -5px;
-    line-height: 86px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 34px;
+    letter-spacing: -2.24px;
     color: #2128bd;
+
+    @include res(360) {
+      font-size: 31px;
+    }
+
+    @include res--mobileSM {
+      font-size: 34px;
+      line-height: 37px;
+    }
+
+    @include res--tablet {
+      font-size: 60px;
+      letter-spacing: -4.48px;
+      line-height: 65px;
+    }
+
+    @include res--laptop {
+      font-size: 70px;
+      letter-spacing: -5.22px;
+      line-height: 75px;
+    }
+
+    @include res--desktop {
+      font-size: 80px;
+      letter-spacing: -5px;
+      line-height: 86px;
+    }
   }
 
   &-text {
-    margin: 35px 0 0 0;
-    font-size: 24px;
-    letter-spacing: -0.4px;
-    line-height: 26px;
     color: #2128bd;
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    line-height: 21px;
+
+    @include res--tablet {
+      margin-top: 25px;
+      font-size: 24px;
+      letter-spacing: -0.4px;
+      line-height: 26px;
+    }
+    @include res--laptop {
+      margin-top: 35px;
+    }
+  }
+}
+
+.envelope-particle {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include pointer-none;
+
+  &-item {
+    position: absolute;
+    @include pointer-auto;
+    will-change: transform;
+    transform: scale(0.77);
+  }
+}
+
+.envelope-particle-item {
+  $particle_v1: (
+    0: (
+      top: 41.65px,
+      right: 140.7px
+    ),
+    768: (
+      top: 95.2px,
+      right: 321.6px
+    ),
+    1024: (
+      top: 107.1px,
+      right: 361.8px
+    ),
+    1600: (
+      top: 130.9px,
+      right: 442.2px
+    )
+  );
+  $particle_v2: (
+    0: (
+      top: 83.65px,
+      right: 38.5px
+    ),
+    768: (
+      top: 191.2px,
+      right: 88px
+    ),
+    1024: (
+      top: 215.1px,
+      right: 99px
+    ),
+    1600: (
+      top: 262.9px,
+      right: 121px
+    )
+  );
+  $particle_v3: (
+    0: (
+      top: 80.15px,
+      left: 68.6px
+    ),
+    768: (
+      top: 183.2px,
+      left: 156.8px
+    ),
+    1024: (
+      top: 206.1px,
+      left: 176.4px
+    ),
+    1600: (
+      top: 251.9px,
+      left: 215.6px
+    )
+  );
+
+  $particle_v4: (
+    0: (
+      top: 41.65px,
+      left: 141.75px
+    ),
+    768: (
+      top: 95.2px,
+      left: 324px
+    ),
+    1024: (
+      top: 107.1px,
+      left: 364.5px
+    ),
+    1600: (
+      top: 130.9px,
+      left: 445.5px
+    )
+  );
+
+  $particle_v5: (
+    0: (
+      right: 138.25px,
+      bottom: 46.2px
+    ),
+    768: (
+      right: 316px,
+      bottom: 105.6px
+    ),
+    1024: (
+      right: 355.5px,
+      bottom: 118.8px
+    ),
+    1600: (
+      right: 434.5px,
+      bottom: 145.2px
+    )
+  );
+
+  $particle_v6: (
+    0: (
+      right: 40.25px,
+      bottom: 79.1px
+    ),
+    768: (
+      right: 92px,
+      bottom: 180.8px
+    ),
+    1024: (
+      right: 103.5px,
+      bottom: 203.4px
+    ),
+    1600: (
+      right: 126.5px,
+      bottom: 248.6px
+    )
+  );
+
+  $particle_v7: (
+    0: (
+      left: 47.6px,
+      bottom: 79.1px
+    ),
+    768: (
+      left: 108.8px,
+      bottom: 180.8px
+    ),
+    1024: (
+      left: 122.4px,
+      bottom: 203.4px
+    ),
+    1600: (
+      left: 149.6px,
+      bottom: 248.6px
+    )
+  );
+
+  $particle_v8: (
+    0: (
+      left: 143.5px,
+      bottom: 46.55px
+    ),
+    768: (
+      left: 328px,
+      bottom: 106.4px
+    ),
+    1024: (
+      left: 369px,
+      bottom: 119.7px
+    ),
+    1600: (
+      left: 451px,
+      bottom: 146.3px
+    )
+  );
+
+  &.-v1 {
+    @each $map, $value in $particle_v1 {
+      @include res($map) {
+        top: map-get($value, top);
+        right: map-get($value, right);
+      }
+    }
+  }
+
+  &.-v2 {
+    @each $map, $value in $particle_v2 {
+      @include res($map) {
+        top: map-get($value, top);
+        right: map-get($value, right);
+      }
+    }
+  }
+
+  &.-v3 {
+    @each $map, $value in $particle_v3 {
+      @include res($map) {
+        top: map-get($value, top);
+        left: map-get($value, left);
+      }
+    }
+  }
+
+  &.-v4 {
+    @each $map, $value in $particle_v4 {
+      @include res($map) {
+        top: map-get($value, top);
+        left: map-get($value, left);
+      }
+    }
+  }
+
+  &.-v5 {
+    @each $map, $value in $particle_v5 {
+      @include res($map) {
+        right: map-get($value, right);
+        bottom: map-get($value, bottom);
+      }
+    }
+  }
+
+  &.-v6 {
+    @each $map, $value in $particle_v6 {
+      @include res($map) {
+        right: map-get($value, right);
+        bottom: map-get($value, bottom);
+      }
+    }
+  }
+
+  &.-v7 {
+    @each $map, $value in $particle_v7 {
+      @include res($map) {
+        left: map-get($value, left);
+        bottom: map-get($value, bottom);
+      }
+    }
+  }
+
+  &.-v8 {
+    @each $map, $value in $particle_v8 {
+      @include res($map) {
+        left: map-get($value, left);
+        bottom: map-get($value, bottom);
+      }
+    }
   }
 }
