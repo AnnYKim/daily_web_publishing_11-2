@@ -66,14 +66,15 @@
   line-height: 14px;
   letter-spacing: -0.17px;
 
-  //768
-  height: 72px;
-  min-width: 203px;
-  padding: 0 23px;
-  font-size: 16px;
-  border-radius: 20px;
-  line-height: 18px;
-  letter-spacing: -0.21px;
+  @include res--tablet {
+    height: 72px;
+    min-width: 203px;
+    padding: 0 23px;
+    font-size: 16px;
+    border-radius: 20px;
+    line-height: 18px;
+    letter-spacing: -0.21px;
+  }
 
   &-icon {
     display: block;
@@ -83,9 +84,10 @@
     font-size: 20px;
     min-width: 37px;
 
-    //768
-    min-width: 40px;
-    font-size: 22px;
+    @include res--tablet {
+      min-width: 40px;
+      font-size: 22px;
+    }
   }
 
   &-title b {
@@ -143,8 +145,9 @@
     padding: 0 21px;
     animation: Ani_sign-marquee 2s linear infinite;
 
-    //1200
-    padding: 0 25px;
+    @include res--laptopLG {
+      padding: 0 25px;
+    }
 
     &:after {
       content: attr(data-text);

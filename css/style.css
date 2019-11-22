@@ -1,6 +1,6 @@
 /**
  * -----------------------------------------------
- * Last Modified: 2019-11-22 12:31:42
+ * Last Modified: 2019-11-22 15:07:12
  * Author: nana (nykim@nykim.net)
  * Description: 하루퍼블 CSS
  * -----------------------------------------------
@@ -905,13 +905,18 @@ a:focus {
 		border-radius: 10px;
 		line-height: 14px;
 		letter-spacing: -0.17px;
-		height: 72px;
-		min-width: 203px;
-		padding: 0 23px;
-		font-size: 16px;
-		border-radius: 20px;
-		line-height: 18px;
-		letter-spacing: -0.21px;
+}
+
+@media screen and (min-width: 768px) {
+		.btn-store {
+				height: 72px;
+				min-width: 203px;
+				padding: 0 23px;
+				font-size: 16px;
+				border-radius: 20px;
+				line-height: 18px;
+				letter-spacing: -0.21px;
+		}
 }
 
 .btn-store-icon {
@@ -919,8 +924,13 @@ a:focus {
 		line-height: 0;
 		font-size: 20px;
 		min-width: 37px;
-		min-width: 40px;
-		font-size: 22px;
+}
+
+@media screen and (min-width: 768px) {
+		.btn-store-icon {
+				min-width: 40px;
+				font-size: 22px;
+		}
 }
 
 .btn-store-title b {
@@ -979,7 +989,12 @@ a:focus {
 		display: inline-block;
 		padding: 0 21px;
 		animation: Ani_sign-marquee 2s linear infinite;
-		padding: 0 25px;
+}
+
+@media screen and (min-width: 1200px) {
+		.btn-sign-text {
+				padding: 0 25px;
+		}
 }
 
 .btn-sign-text:after {
@@ -2499,6 +2514,24 @@ a:focus {
 		padding: 0 10px;
 }
 
+@media screen and (min-width: 768px) {
+		.advantage-container {
+				padding: 0 30px;
+		}
+}
+
+@media screen and (min-width: 1200px) {
+		.advantage-container {
+				padding: 0 130px;
+		}
+}
+
+@media screen and (min-width: 1600px) {
+		.advantage-container {
+				padding: 0 270px;
+		}
+}
+
 .advantage-details {
 		margin-top: 100px;
 }
@@ -2521,6 +2554,10 @@ a:focus {
 		display: -ms-flexbox;
 		display: -webkit-flex;
 		display: flex;
+		-webkit-align-items: flex-start;
+		-moz-align-items: flex-start;
+		-ms-align-items: flex-start;
+		align-items: flex-start;
 		-webkit-flex-direction: column;
 		-moz-flex-direction: column;
 		-ms-flex-direction: column;
@@ -2665,6 +2702,12 @@ a:focus {
 		text-align: center;
 }
 
+@media screen and (min-width: 1024px) {
+		.getapp-body {
+				padding-top: 120px;
+		}
+}
+
 .getapp-container {
 		padding: 0;
 		margin: 0 auto;
@@ -2679,30 +2722,78 @@ a:focus {
 		font-weight: 600;
 		letter-spacing: -2.24px;
 		line-height: 32px;
-		max-width: 580px;
-		font-size: 60px;
-		letter-spacing: -4.48px;
-		line-height: 70px;
-		max-width: 700px;
-		font-size: 70px;
-		letter-spacing: -5.22px;
-		line-height: 74px;
-		max-width: 800px;
-		font-size: 80px;
-		letter-spacing: -5.97px;
-		line-height: 86px;
+}
+
+@media screen and (min-width: 768px) {
+		.getapp-header {
+				max-width: 580px;
+				font-size: 60px;
+				letter-spacing: -4.48px;
+				line-height: 70px;
+		}
+}
+
+@media screen and (min-width: 1200px) {
+		.getapp-header {
+				max-width: 700px;
+				font-size: 70px;
+				letter-spacing: -5.22px;
+				line-height: 74px;
+		}
+}
+
+@media screen and (min-width: 1600px) {
+		.getapp-header {
+				max-width: 800px;
+				font-size: 80px;
+				letter-spacing: -5.97px;
+				line-height: 86px;
+		}
 }
 
 .getapp-store {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: center;
+		-moz-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		-ms-flex-pack: center;
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
 		margin: 23px 0 -7px 0;
-		margin: 45px -10px 0 -16px;
-		margin: 65px 0 0 0;
+}
+
+@media screen and (min-width: 768px) {
+		.getapp-store {
+				-webkit-flex-direction: row;
+				-moz-flex-direction: row;
+				-ms-flex-direction: row;
+				flex-direction: row;
+				margin: 45px -10px 0 -16px;
+		}
+}
+
+@media screen and (min-width: 1200px) {
+		.getapp-store {
+				margin: 65px 0 0 0;
+		}
 }
 
 .getapp-store-item {
 		display: inline-block;
 		padding: 7px 0;
-		padding: 0 16px;
+}
+
+@media screen and (min-width: 768px) {
+		.getapp-store-item {
+				padding: 0 16px;
+		}
 }
 
 .getapp-footer {
@@ -2716,12 +2807,29 @@ a:focus {
 		font-weight: 500;
 		font-size: 14px;
 		letter-spacing: -0.18px;
-		font-size: 16px;
-		letter-spacing: -0.21px;
 }
 
-.getapp-dev-text {
-		margin-top: 4px;
+@media screen and (min-width: 768px) {
+		.getapp-dev {
+				font-size: 16px;
+				letter-spacing: -0.21px;
+		}
+}
+
+.getapp-dev-image {
+		width: 70px;
+}
+
+@media screen and (min-width: 768px) {
+		.getapp-dev-image {
+				width: 99px;
+		}
+}
+
+@media screen and (min-width: 768px) {
+		.getapp-dev-text {
+				margin-top: 4px;
+		}
 }
 
 /*! 

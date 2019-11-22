@@ -34,6 +34,17 @@
   }
   &-container {
     padding: 0 10px;
+
+    @include res--tablet {
+      padding: 0 30px;
+    }
+
+    @include res--laptopLG {
+      padding: 0 130px;
+    }
+    @include res--desktop {
+      padding: 0 270px;
+    }
   }
   &-details {
     margin-top: 100px;
@@ -48,6 +59,7 @@
   }
   &-grid {
     @include flexbox();
+    @include align-items(flex-start);
     @include flex-direction(column);
     @include res--laptop {
       @include flex-direction(row);
