@@ -4,14 +4,19 @@
 }
 
 .btn-rounded {
-  height: 60px;
-  padding: 0 39px;
-  -webkit-border-radius: 18px;
-  -moz-border-radius: 18px;
-  border-radius: 18px;
-  font-size: 16px;
+  height: 48px;
+  padding: 0 25px;
+  border-radius: 15px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.21px;
+
+  @include res--tablet {
+    height: 60px;
+    padding: 0 39px;
+    border-radius: 18px;
+    font-size: 16px;
+  }
 
   .btn-text {
     position: relative;

@@ -1,21 +1,96 @@
 .feature {
   &-content {
-    padding: 150px 0 250px;
+    position: relative;
+    min-height: 550px;
+
+    @include res--tablet {
+      padding-bottom: 120px;
+    }
+    @include res--laptop {
+      width: 100%;
+      padding: 120px 0 250px;
+    }
+    @include res--desktop {
+      padding: 150px 0 250px;
+    }
   }
 
   &-body {
     width: 100%;
   }
+  &-container {
+    @include res--laptop {
+      padding: 0 120px;
+    }
+    @include res--desktop {
+      padding: 0 270px;
+    }
+  }
   &-grid {
+    @include res--laptop {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+    }
+  }
+
+  .grid-col {
+    &.-left {
+      @include res--laptop {
+        @include flex(1);
+      }
+    }
+    &.-right {
+      margin-top: 50px;
+      @include res--laptop {
+        @include flex(1);
+        margin-top: 0;
+        padding-left: 55px;
+      }
+      @include res--laptopLG {
+        padding-left: 70px;
+      }
+      @include res--desktop {
+        padding-left: 90px;
+      }
+    }
+  }
+
+  &-items-container {
+    position: relative;
     @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
+
+    @include res--laptop {
+      display: block;
+    }
   }
 
   &-demo {
     position: relative;
-    width: 463px;
-    height: 463px;
+    width: 259px;
+    height: 259px;
+    margin: 0 auto;
+
+    @include res--mobileSM {
+      width: 290px;
+      height: 290px;
+    }
+
+    @include res--tablet {
+      width: 326px;
+      height: 326px;
+    }
+
+    @include res--laptopLG {
+      width: 407px;
+      height: 407px;
+      margin: 0;
+    }
+
+    @include res--desktop {
+      width: 463px;
+      height: 463px;
+    }
 
     .desktop & {
       will-change: transform;
@@ -42,18 +117,41 @@
     }
   }
 
+  &-items {
+  }
   &-text {
-    min-width: 334px;
-    margin: 30px 0;
-    font-size: 40px;
-    line-height: 54px;
-    letter-spacing: -0.7px;
+    // min-width: 170px;
+    font-size: 21px;
+    line-height: 24px;
+    margin: 20px 20px;
+
     font-weight: 800;
-    text-shadow: none;
-    -webkit-text-stroke: 1px #0019ac;
     opacity: 0.5;
     color: #eefbff;
     transition: all 0.3s;
+
+    // text-shadow: -1px -1px 0 #0019ac, 1px -1px 0 #0019ac, -1px 1px 0 #0019ac, 1px 1px 0 #0019ac;
+    // -webkit-text-stroke: 1px transparent;
+    -webkit-text-stroke: 1px #0019ac;
+
+    @include res--tablet {
+      text-shadow: none;
+      min-width: 334px;
+      font-size: 32px;
+      line-height: 43px;
+      letter-spacing: -0.55px;
+      -webkit-text-stroke: 1px #0019ac;
+    }
+
+    @include res--laptop {
+      margin: 30px 0;
+    }
+
+    @include res--laptopLG {
+      font-size: 40px;
+      line-height: 54px;
+      letter-spacing: -0.7px;
+    }
 
     &:hover {
       opacity: 1;

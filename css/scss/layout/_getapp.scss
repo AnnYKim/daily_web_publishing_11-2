@@ -12,9 +12,17 @@
     @include flexbox();
     @include flex-direction(column);
     @include justify-content(space-between);
-    height: 100vh;
-    min-height: 630px; //868
-    min-height: 700px; //1024
+    height: 500px;
+    @include res--tablet {
+      min-height: 630px;
+      height: 100vh;
+    }
+    @include res--laptop {
+      min-height: 700px;
+    }
+    @include res--desktop {
+      min-height: 900px;
+    }
   }
 
   &-body {

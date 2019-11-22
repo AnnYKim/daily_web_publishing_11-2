@@ -23,6 +23,15 @@
 
   &-container {
     height: 100%;
+    padding: 0 30px;
+
+    @include res--tablet {
+      padding: 0 50px;
+    }
+
+    @include res--desktop {
+      padding: 0 70px;
+    }
   }
 
   &-grid {

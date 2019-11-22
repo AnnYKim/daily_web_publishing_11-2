@@ -12,6 +12,10 @@
     transform-style: preserve-3d;
 
     @include res--tablet {
+      height: 100vh;
+      min-height: 850px;
+    }
+    @include res--laptop {
       height: 150vh;
       min-height: 850px;
     }

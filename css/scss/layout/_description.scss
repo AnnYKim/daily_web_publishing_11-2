@@ -1,28 +1,88 @@
 .description {
   &-content {
-    @include flexbox();
-    @include align-items(center);
-    padding-bottom: 180px;
-    height: 105vh;
-    min-height: 650px;
-    padding: 130px 0;
+    position: relative;
+    padding: 80px 0 110px;
+
+    @include res--laptop {
+      padding: 130px 0;
+    }
   }
   &-body {
     width: 100%;
   }
+  &-container {
+    padding: 0 30px;
+
+    @include res--tablet {
+      padding: 0 50px;
+    }
+
+    @include res--desktop {
+      padding: 0 70px; //1600
+    }
+    @include res--laptop {
+      padding: 0 270px 0 130px;
+    }
+
+    @include res--desktop {
+      max-width: 1600px;
+      padding: 0 270px 0 270px;
+    }
+  }
   &-header {
-    font-size: 28px;
-    letter-spacing: -0.48px;
-    line-height: 42px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+
+    @include res--tablet {
+      font-size: 28px;
+    }
+    @include res--laptop {
+      font-size: 26px;
+      letter-spacing: -0.48px;
+      line-height: 42px;
+      text-align: left;
+    }
+    @include res--laptopLG {
+      font-size: 30px;
+      line-height: 48px;
+    }
   }
   &-text {
-    font-size: 28px;
-    letter-spacing: -0.48px;
-    line-height: 42px;
-    max-width: 416px; //1200
+    font-size: 16px;
+    text-align: center;
+    max-width: 300px;
+    margin: 6px auto 0;
+
+    @include res--tablet {
+      font-size: 20px;
+      max-width: 420px;
+    }
+
+    @include res--laptop {
+      font-size: 21px;
+      letter-spacing: -0.48px;
+      line-height: 32px;
+      text-align: left;
+    }
+    @include res--laptopLG {
+      font-size: 25px;
+      line-height: 37px;
+    }
   }
   &-action {
-    margin: 50px 0 0 0;
+    margin-top: 30px;
+
+    .btn {
+      margin: 0 auto;
+      @include res--laptop {
+        margin: 0;
+      }
+    }
+    @include res--tablet {
+      margin: 50px 0 0 0;
+    }
   }
   &-figure {
     position: relative;
@@ -31,10 +91,10 @@
       top: 0;
       left: 0;
       will-change: transform;
-      max-width: 248px;
-      max-width: 290px; //360
-      max-width: 80%; //768
-      max-width: 90%; //1024
+      // max-width: 248px;
+      // max-width: 290px; //360
+      // max-width: 80%; //768
+      // max-width: 90%; //1024
       max-width: 100%; //1200
 
       &:first-child {
@@ -45,16 +105,99 @@
 }
 
 .grid-description {
-  @include justify-content(space-between);
+  display: block;
   width: 100%;
+
+  @include res--laptop {
+    @include flexbox();
+    @include justify-content(space-between);
+  }
 
   .grid-col {
     margin: 0;
   }
-  .grid-col.--left {
-    max-width: 56%;
+  .grid-col.-left {
+    max-width: 80%;
+    margin: 0 auto;
+
+    @include res--tablet {
+      width: 70%;
+      max-width: 600px;
+    }
+
+    @include res--laptop {
+      width: 56%;
+    }
+    @include res--laptopLG {
+      margin: 0;
+    }
   }
-  .grid-col.--right {
-    padding-left: 70px;
+  .grid-col.-right {
+    margin-top: 25px;
+    @include res--laptop {
+      padding-left: 70px;
+    }
+    @include res--desktop {
+      padding-left: 120px;
+    }
+  }
+}
+
+.description2 {
+  .description-content {
+    @include flexbox();
+    @include align-items(center);
+    // @include justify-content(space-between);
+    @include res--tablet {
+      min-height: 800px;
+      padding: 180px 0;
+    }
+
+    @include res--laptopLG {
+      height: 105vh;
+      min-height: 650px;
+      padding: 130px 0;
+    }
+  }
+  .description-container {
+    @include res--laptop {
+      padding: 0 130px;
+    }
+    @include res--desktop {
+      padding: 0 270px;
+    }
+  }
+  .grid-col.-left {
+    max-width: 100%;
+  }
+  .grid-col.-right {
+    max-width: 80%;
+    margin: 50px auto 0;
+
+    @include res--tablet {
+      max-width: 75%;
+      margin: 80px auto 0;
+
+      .description-figure {
+        margin-left: calc(50vw - 900px / 2);
+      }
+    }
+
+    @include res--laptop {
+      max-width: 100%;
+      margin: 0;
+      padding-left: 0;
+
+      .description-figure {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .description-text {
+    @include res--laptop {
+      max-width: 80%;
+      margin: 0;
+    }
   }
 }

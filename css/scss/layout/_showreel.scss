@@ -133,8 +133,14 @@
     overflow: hidden;
   }
   &-roll {
-    margin: 0 calc(50vw - 260px / 2);
     padding: 0;
+    margin: 0 calc(50vw - 260px / 2);
+    @include res--tablet {
+      margin: 0 calc(50vw - 592px / 2);
+    }
+    @include res--laptop {
+      margin: 0 calc(50vw - 672px / 2);
+    }
   }
   &-roll-inner {
     @include flexbox();
@@ -143,6 +149,15 @@
   }
   &-roll-item {
     margin: 0 10px;
+
+    @include res--tablet {
+      margin: 0 20px;
+      padding: 0 10px;
+    }
+
+    @include res--laptop {
+      margin: 0 40px;
+    }
 
     &:first-child {
       margin-left: 0;
